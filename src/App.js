@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
-import { Loop, Stage } from 'react-game-kit'
+import { Loop, World, Stage, Body, Sprite } from 'react-game-kit'
 import './App.css'
 
 class App extends Component {
@@ -10,14 +9,15 @@ class App extends Component {
         <Loop>
           <Stage>
             <World>
-              <TileMap
-                style={{ top: Math.floor(-63 * this.context.scale) }}
-                src='assets/buildings.png'
-                rows={1}
-                columns={6}
-                tileSize={512}
-                layers={[[1, 2, 3, 4, 5, 6]]}
-              />
+              <Body args={[0, 0, 75, 75]} ref={b => (this.body = b.body)}>
+                <Sprite
+                  repeat={true}
+                  src='assets/character-movement.png'
+                  scale={this.context.scale * 2}
+                  state={0}
+                  steps={[9, 9, 0, 4, 5]}
+                />
+              </Body>
             </World>
           </Stage>
         </Loop>
