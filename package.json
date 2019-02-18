@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "webpack": "^4.29.5"
+  },
+  "dependencies": {
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-game-kit": "^1.0.6",
+    "react-scripts": "^2.1.5"
+  }
+}
